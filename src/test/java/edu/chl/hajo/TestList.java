@@ -49,9 +49,9 @@ public class TestList {
     public void testRemove() {
         l.add(1);
         assertTrue(l.getLength() == 1);
-        int i = l.remove();
+        Object i = l.remove();
         assertTrue(l.getLength() == 0);
-        assertTrue(i == 1);
+        assertTrue(i == (Object)1);
     }
 
     @Test
@@ -61,7 +61,7 @@ public class TestList {
         l.add(3);
         l.add(4);
         l.add(5);
-        assertTrue(l.get(2) == 3);
+        assertTrue(l.get(2) == (Object)3);
     }
 
     @Test(expected=IllegalStateException.class)
@@ -85,8 +85,8 @@ public class TestList {
         l.add(2);
         List test = l.copy();
         assertTrue(test.getLength() == 2);
-        int removed = l.remove();
-        assertTrue(removed == 2);
+        Object removed = l.remove();
+        assertTrue(removed == (Object)2);
     }
 
 }
